@@ -23,8 +23,6 @@ import {
   Typography,
   Button,
   TextField,
-  IconButton,
-  Tooltip,
   CircularProgress,
 } from "@mui/material";
 
@@ -33,8 +31,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import CartDrawer from "./CartDrawer";
-import Header from "../Admin/Header";
-import { WrapText } from "@mui/icons-material";
 
 const categories = [
   "breakfast",
@@ -82,7 +78,6 @@ const OrderPlacement = () => {
   const { currentUser } = useAuth();
 
   const [guests, setGuests] = useState([]);
-  const [menuItems, setMenuItems] = useState([]);
   const [selectedGuest, setSelectedGuest] = useState("");
   // const [cart, setCart] = useState([]);
   // const [isCartOpen, setIsCartOpen] = useState(false);

@@ -18,7 +18,6 @@ import {
   Avatar,
   useMediaQuery,
   useTheme,
-  Slide,
   Button,
   Badge,
 } from "@mui/material";
@@ -30,7 +29,7 @@ import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ReceiptIcon from "@mui/icons-material/Receipt";
 import BarChartIcon from "@mui/icons-material/BarChart";
-import CartDrawer from "../Order/CartDrawer";
+
 const navItems = [
   { label: "Guest Management", path: "guest-management", icon: <GroupIcon /> },
   {
