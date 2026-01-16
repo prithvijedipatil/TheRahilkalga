@@ -51,7 +51,7 @@ const categories = [
   "cafe",
 ];
 
-// Emoji icons for categories - fallback if no image/icon provided
+// Emoji icons for categories
 const categoryIcons = {
   breakfast: "🍳",
   lunch: "🥗",
@@ -71,6 +71,28 @@ const categoryIcons = {
   shakes: "🥤",
   desserts: "🍰",
   cafe: "🏠",
+};
+
+// Enhanced category styling with gradients
+const categoryGradients = {
+  breakfast: "linear-gradient(135deg, #FFD89B 0%, #FFA500 100%)",
+  lunch: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+  dinner: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+  drinks: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+  extras: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
+  "hot beverages": "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+  "cold beverages": "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
+  sandwiches: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
+  "veg munchies": "linear-gradient(135deg, #90ee90 0%, #228b22 100%)",
+  "non-veg munchies": "linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%)",
+  "indian mains": "linear-gradient(135deg, #f6d365 0%, #fda085 100%)",
+  chinese: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
+  pizza: "linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%)",
+  pasta: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
+  burger: "linear-gradient(135deg, #ff6b35 0%, #f7931e 100%)",
+  shakes: "linear-gradient(135deg, #ff006e 0%, #fb5607 100%)",
+  desserts: "linear-gradient(135deg, #ffd1dc 0%, #ff69b4 100%)",
+  cafe: "linear-gradient(135deg, #8b4513 0%, #d2b48c 100%)",
 };
 
 const OrderPlacement = () => {
@@ -235,25 +257,63 @@ const OrderPlacement = () => {
               <Grid item xs={6} sm={4} md={3} key={cat}>
                 <Card
                   sx={{
-                    height: 140,
+                    height: 160,
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
                     cursor: "pointer",
                     textTransform: "capitalize",
-                    transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    background:
+                      categoryGradients[cat] ||
+                      "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                    color: "white",
+                    position: "relative",
+                    overflow: "hidden",
+                    boxShadow: "0 8px 24px rgba(0, 0, 0, 0.15)",
                     "&:hover": {
-                      boxShadow: 6,
-                      transform: "scale(1.05)",
+                      boxShadow: "0 16px 40px rgba(0, 0, 0, 0.25)",
+                      transform: "translateY(-8px) scale(1.02)",
+                    },
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: "rgba(255, 255, 255, 0.1)",
+                      opacity: 0,
+                      transition: "opacity 0.3s ease",
+                    },
+                    "&:hover::before": {
+                      opacity: 1,
                     },
                   }}
                   onClick={() => setSelectedCategory(cat)}
                 >
-                  <Typography variant="h3" mb={1}>
+                  <Typography
+                    variant="h2"
+                    mb={1}
+                    sx={{
+                      fontSize: "3rem",
+                      filter: "drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2))",
+                      zIndex: 1,
+                    }}
+                  >
                     {categoryIcons[cat] || "📦"}
                   </Typography>
-                  <Typography variant="h6">{cat}</Typography>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontWeight: "bold",
+                      textShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+                      zIndex: 1,
+                    }}
+                  >
+                    {cat}
+                  </Typography>
                 </Card>
               </Grid>
             ))}
