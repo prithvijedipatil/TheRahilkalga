@@ -144,7 +144,7 @@ const MenuManagement = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6">TheRahil's Admin</Typography>
+          <Typography variant="h6">BlueSheep Admin</Typography>
         </Toolbar>
       </AppBar>
       <Drawer

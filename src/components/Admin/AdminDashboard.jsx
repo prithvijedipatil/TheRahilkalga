@@ -165,7 +165,7 @@ const AdminDashboard = () => {
               margin: "10px",
             }}
           >
-            TheRahil's
+            Bluesheep Hostel
           </Typography>
 
           {!isMobile && renderTabs()}
@@ -227,7 +227,7 @@ const AdminDashboard = () => {
         {location.pathname === "/admin" && (
           <>
             <Typography variant="h3" align="center" gutterBottom>
-              TheRahil's
+              BlueSheep Hostel
             </Typography>
             <Typography
               variant="h5"

@@ -39,7 +39,7 @@ const CartDrawer = ({
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const sendWhatsAppMessage = (orderData) => {
-    const phoneNumber = "919958268476";
+    const phoneNumber = "919902225769";
     const selectedGuestName =
       guests.find((g) => g.id === selectedGuest)?.name || "Guest";
 
