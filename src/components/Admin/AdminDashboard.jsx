@@ -85,7 +85,14 @@ const AdminDashboard = () => {
       textColor="inherit"
       indicatorColor="secondary"
       aria-label="Admin navigation tabs"
-      sx={{ flexGrow: 1 }}
+      sx={{
+        flexGrow: 1,
+        "& .MuiTabs-indicator": {
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          height: "3px",
+          borderRadius: "3px",
+        },
+      }}
     >
       {navItems.map(({ label, path, icon }) => (
         <Tab
@@ -98,11 +105,18 @@ const AdminDashboard = () => {
           sx={{
             textTransform: "none",
             fontWeight: "medium",
-            fontSize: "1rem",
+            fontSize: "0.95rem",
             minWidth: 130,
+            transition: "all 0.3s ease",
+            "&:hover": {
+              opacity: 0.8,
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
+              borderRadius: "8px 8px 0 0",
+            },
             "&.Mui-selected": {
               fontWeight: "bold",
-              color: theme.palette.secondary.main,
+              color: "white",
+              backgroundColor: "rgba(255, 255, 255, 0.05)",
             },
           }}
         />
@@ -137,8 +151,10 @@ const AdminDashboard = () => {
 
   return (
     <>
-      <AppBar position="sticky" elevation={3}>
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+      <AppBar position="sticky">
+        <Toolbar
+          sx={{ display: "flex", justifyContent: "space-between", py: 1 }}
+        >
           {isMobile && (
             <IconButton
               edge="start"
@@ -146,6 +162,13 @@ const AdminDashboard = () => {
               aria-label="open drawer"
               onClick={() => setMobileMenuOpen(true)}
               size="large"
+              sx={{
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  backgroundColor: "rgba(255, 255, 255, 0.15)",
+                  transform: "scale(1.05)",
+                },
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -162,6 +185,13 @@ const AdminDashboard = () => {
               flexGrow: isMobile ? 1 : 0,
               userSelect: "none",
               margin: "10px",
+              fontSize: "1.5rem",
+              letterSpacing: "0.5px",
+              transition: "all 0.3s ease",
+              "&:hover": {
+                opacity: 0.9,
+                textShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+              },
             }}
           >
             The Rahil's

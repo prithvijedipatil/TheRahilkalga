@@ -73,26 +73,43 @@ const categoryIcons = {
   cafe: "🏠",
 };
 
-// Enhanced category styling with gradients
+// Enhanced category styling with smooth, light gradients
 const categoryGradients = {
-  breakfast: "linear-gradient(135deg, #FFD89B 0%, #FFA500 100%)",
-  lunch: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-  dinner: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-  drinks: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-  extras: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
-  "hot beverages": "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
-  "cold beverages": "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
-  sandwiches: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
-  "veg munchies": "linear-gradient(135deg, #90ee90 0%, #228b22 100%)",
-  "non-veg munchies": "linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%)",
-  "indian mains": "linear-gradient(135deg, #f6d365 0%, #fda085 100%)",
-  chinese: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
-  pizza: "linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%)",
-  pasta: "linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)",
-  burger: "linear-gradient(135deg, #ff6b35 0%, #f7931e 100%)",
-  shakes: "linear-gradient(135deg, #ff006e 0%, #fb5607 100%)",
-  desserts: "linear-gradient(135deg, #ffd1dc 0%, #ff69b4 100%)",
-  cafe: "linear-gradient(135deg, #8b4513 0%, #d2b48c 100%)",
+  breakfast:
+    "linear-gradient(135deg, rgba(255, 216, 155, 0.15) 0%, rgba(255, 165, 0, 0.1) 100%)",
+  lunch:
+    "linear-gradient(135deg, rgba(102, 126, 234, 0.12) 0%, rgba(118, 75, 162, 0.08) 100%)",
+  dinner:
+    "linear-gradient(135deg, rgba(240, 147, 251, 0.12) 0%, rgba(245, 87, 108, 0.08) 100%)",
+  drinks:
+    "linear-gradient(135deg, rgba(79, 172, 254, 0.12) 0%, rgba(0, 242, 254, 0.08) 100%)",
+  extras:
+    "linear-gradient(135deg, rgba(67, 233, 123, 0.12) 0%, rgba(56, 249, 215, 0.08) 100%)",
+  "hot beverages":
+    "linear-gradient(135deg, rgba(250, 112, 154, 0.12) 0%, rgba(254, 225, 64, 0.08) 100%)",
+  "cold beverages":
+    "linear-gradient(135deg, rgba(48, 207, 208, 0.12) 0%, rgba(51, 8, 103, 0.08) 100%)",
+  sandwiches:
+    "linear-gradient(135deg, rgba(168, 237, 234, 0.12) 0%, rgba(254, 214, 227, 0.08) 100%)",
+  "veg munchies":
+    "linear-gradient(135deg, rgba(144, 238, 144, 0.12) 0%, rgba(34, 139, 34, 0.08) 100%)",
+  "non-veg munchies":
+    "linear-gradient(135deg, rgba(255, 107, 107, 0.12) 0%, rgba(238, 90, 111, 0.08) 100%)",
+  "indian mains":
+    "linear-gradient(135deg, rgba(246, 211, 101, 0.12) 0%, rgba(253, 160, 133, 0.08) 100%)",
+  chinese:
+    "linear-gradient(135deg, rgba(250, 112, 154, 0.12) 0%, rgba(254, 225, 64, 0.08) 100%)",
+  pizza:
+    "linear-gradient(135deg, rgba(255, 154, 86, 0.12) 0%, rgba(255, 106, 136, 0.08) 100%)",
+  pasta:
+    "linear-gradient(135deg, rgba(255, 236, 210, 0.12) 0%, rgba(252, 181, 159, 0.08) 100%)",
+  burger:
+    "linear-gradient(135deg, rgba(255, 107, 53, 0.12) 0%, rgba(247, 147, 30, 0.08) 100%)",
+  shakes:
+    "linear-gradient(135deg, rgba(255, 0, 110, 0.12) 0%, rgba(251, 86, 7, 0.08) 100%)",
+  desserts:
+    "linear-gradient(135deg, rgba(255, 209, 220, 0.12) 0%, rgba(255, 105, 180, 0.08) 100%)",
+  cafe: "linear-gradient(135deg, rgba(139, 69, 19, 0.12) 0%, rgba(210, 180, 140, 0.08) 100%)",
 };
 
 const OrderPlacement = () => {

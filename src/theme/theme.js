@@ -46,7 +46,32 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-          boxShadow: "0 4px 20px rgba(102, 126, 234, 0.3)",
+          boxShadow:
+            "0 8px 32px rgba(102, 126, 234, 0.25), 0 2px 4px rgba(0, 0, 0, 0.1)",
+          backdropFilter: "blur(8px)",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+        },
+      },
+    },
+    MuiTabs: {
+      styleOverrides: {
+        root: {
+          "& .MuiTab-root": {
+            textTransform: "none",
+            fontWeight: 500,
+            transition: "all 0.3s ease",
+            "&:hover": {
+              opacity: 0.9,
+            },
+          },
+          "& .MuiTab-root.Mui-selected": {
+            fontWeight: 700,
+          },
+          "& .MuiTabs-indicator": {
+            backgroundColor: "rgba(255, 255, 255, 0.8)",
+            height: "3px",
+            borderRadius: "3px",
+          },
         },
       },
     },
@@ -58,7 +83,7 @@ const theme = createTheme({
           borderRadius: "8px",
           boxShadow: "0 4px 12px rgba(102, 126, 234, 0.3)",
           "&:hover": {
-            boxShadow: "0 6px 20px rgba(102, 126, 234, 0.4)",
+            boxShadow: "0 8px 24px rgba(102, 126, 234, 0.4)",
           },
         },
         outlined: {
@@ -111,6 +136,27 @@ const theme = createTheme({
       styleOverrides: {
         paper: {
           background: "linear-gradient(180deg, #f7f7f7 0%, #ffffff 100%)",
+          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          transition: "all 0.2s ease",
+          "&:hover": {
+            backgroundColor: "rgba(102, 126, 234, 0.1)",
+          },
+        },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          transition: "all 0.3s ease",
+          "&:hover": {
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+          },
         },
       },
     },
