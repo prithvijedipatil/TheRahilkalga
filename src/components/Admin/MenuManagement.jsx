@@ -56,7 +56,7 @@ const MenuManagement = () => {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
   const [menuItems, setMenuItems] = useState([]);
-  const [categories, setCategories] = useState([...defaultCategories]);
+  const [categories] = useState([...defaultCategories]);
   const [newItem, setNewItem] = useState({
     name: "",
     price: "",
@@ -180,15 +180,39 @@ const MenuManagement = () => {
   };
 
   return (
-    <div style={{ maxWidth: 1000, margin: "0 auto", padding: 24 }}>
-      <Typography variant="h4" align="center" gutterBottom>
+    <div
+      style={{
+        maxWidth: 1000,
+        margin: "0 auto",
+        padding: 24,
+        minHeight: "100vh",
+        background:
+          "linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%)",
+      }}
+    >
+      <Typography
+        variant="h4"
+        align="center"
+        gutterBottom
+        sx={{
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          backgroundClip: "text",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          fontWeight: "bold",
+        }}
+      >
         Menu Management
       </Typography>
 
       {/* Add Item Section */}
-      <Card sx={{ mb: 4 }}>
+      <Card sx={{ mb: 4, border: "1px solid rgba(102, 126, 234, 0.2)" }}>
         <CardContent>
-          <Typography variant="h6" gutterBottom>
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{ color: "#667eea", fontWeight: "bold" }}
+          >
             Add New Item
           </Typography>
           <form onSubmit={addMenuItem}>

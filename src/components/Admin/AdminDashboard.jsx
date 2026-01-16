@@ -137,7 +137,7 @@ const AdminDashboard = () => {
 
   return (
     <>
-      <AppBar position="sticky" color="primary" elevation={3}>
+      <AppBar position="sticky" elevation={3}>
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           {isMobile && (
             <IconButton
@@ -191,7 +191,16 @@ const AdminDashboard = () => {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <Avatar alt="User" src="/static/images/avatar/1.jpg" />
+              <Avatar
+                alt="User"
+                sx={{
+                  background:
+                    "linear-gradient(135deg, #8b9ff0 0%, #a78fc3 100%)",
+                  fontWeight: "bold",
+                }}
+              >
+                A
+              </Avatar>
             </IconButton>
           </Box>
         </Toolbar>
@@ -222,10 +231,29 @@ const AdminDashboard = () => {
         </MenuItem>
       </Menu>
 
-      <Box sx={{ p: { xs: 2, md: 3 }, maxWidth: 1200, mx: "auto" }}>
+      <Box
+        sx={{
+          p: { xs: 2, md: 3 },
+          maxWidth: 1200,
+          mx: "auto",
+          minHeight: "calc(100vh - 64px)",
+          background:
+            "linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%)",
+        }}
+      >
         {location.pathname === "/admin" && (
           <>
-            <Typography variant="h3" align="center" gutterBottom>
+            <Typography
+              variant="h3"
+              align="center"
+              gutterBottom
+              sx={{
+                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
               The Rahil's
             </Typography>
             <Typography
@@ -240,9 +268,12 @@ const AdminDashboard = () => {
             <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
               <Button
                 variant="contained"
-                color="secondary"
                 size="large"
                 onClick={() => navigate("/admin/place-order")}
+                sx={{
+                  background:
+                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                }}
               >
                 Order Now
               </Button>
