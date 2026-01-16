@@ -7,7 +7,7 @@ const exportToPDF = (orders, guestName, totalBill) => {
   // Add title
   doc.setFontSize(20);
 
-  doc.text(`The Bluesheep Hostel Tirthan`, 14, 15);
+  doc.text(`The Rahil's Hostel Tirthan`, 14, 15);
   doc.setFontSize(18);
   doc.text(`Bill Summary for ${guestName}`, 20, 21);
 

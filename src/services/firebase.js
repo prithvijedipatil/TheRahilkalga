@@ -9,13 +9,12 @@ import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAqoj3oCQga3DeOYfbJ0M8l4PUL-JHTsQo",
-  authDomain: "cafeorderingsystem.firebaseapp.com",
-  projectId: "cafeorderingsystem",
-  storageBucket: "cafeorderingsystem.firebasestorage.app",
-  messagingSenderId: "664765548491",
-  appId: "1:664765548491:web:c23645c9f1f0a93883584e",
-  measurementId: "G-KZDD63P3NV",
+  apiKey: "AIzaSyCYVJ8pWsFCNku7MxDoKmdNh1phqqMyLJI",
+  authDomain: "the-rahil-s-d3cdd.firebaseapp.com",
+  projectId: "the-rahil-s-d3cdd",
+  storageBucket: "the-rahil-s-d3cdd.firebasestorage.app",
+  messagingSenderId: "55219823426",
+  appId: "1:55219823426:web:650f0e1cbe66af69859edb",
 };
 
 // Initialize Firebase
