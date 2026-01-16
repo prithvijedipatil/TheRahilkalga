@@ -114,10 +114,11 @@ const CartDrawer = ({
           maxWidth: "95vw",
           display: "flex",
           flexDirection: "column",
-          height: "90vh", // Limit to 80% of screen height
-          marginTop: "4vh", // Center it vertically (optional)
+          height: "90vh",
+          marginTop: "4vh",
           borderTopLeftRadius: 12,
           borderTopRightRadius: 12,
+          background: "linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%)",
         },
       }}
     >
@@ -139,9 +140,22 @@ const CartDrawer = ({
             justifyContent: "space-between",
             alignItems: "center",
             mb: 2,
+            pb: 2,
+            borderBottom: "2px solid rgba(102, 126, 234, 0.3)",
           }}
         >
-          <Typography variant="h6">Cart</Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              fontWeight: "bold",
+            }}
+          >
+            🛒 Cart
+          </Typography>
           <IconButton onClick={onClose}>
             <CloseIcon />
           </IconButton>
@@ -239,12 +253,24 @@ const CartDrawer = ({
         {/* Total and Place Order Button */}
         {cart.length > 0 && (
           <Box sx={{ mt: 3 }}>
-            <Divider sx={{ mb: 2 }} />
+            <Divider sx={{ mb: 2, borderColor: "rgba(102, 126, 234, 0.2)" }} />
             <Box
               sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}
             >
-              <Typography variant="h6">Total:</Typography>
-              <Typography variant="h6">
+              <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                Total:
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  background:
+                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  fontWeight: "bold",
+                }}
+              >
                 ₹
                 {cart.reduce(
                   (sum, item) => sum + item.price * item.quantity,
@@ -254,11 +280,14 @@ const CartDrawer = ({
             </Box>
             <Button
               variant="contained"
-              color="primary"
               fullWidth
               size="large"
               onClick={handlePlaceOrder}
-              sx={{ mb: 4 }}
+              sx={{
+                mb: 4,
+                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                fontWeight: "bold",
+              }}
             >
               Place Order & WhatsApp
             </Button>

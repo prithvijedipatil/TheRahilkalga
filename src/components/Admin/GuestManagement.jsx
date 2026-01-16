@@ -87,34 +87,80 @@ const GuestManagement = () => {
   };
 
   return (
-    <Box p={2}>
-      <Typography variant="h4" gutterBottom>
+    <Box
+      sx={{
+        p: 3,
+        background:
+          "linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%)",
+        minHeight: "calc(100vh - 64px)",
+        borderRadius: 2,
+      }}
+    >
+      <Typography
+        variant="h4"
+        gutterBottom
+        sx={{
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          backgroundClip: "text",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          fontWeight: "bold",
+          mb: 3,
+        }}
+      >
         Guest Management
       </Typography>
 
-      <Box display="flex" gap={2} mb={4}>
-        <TextField
-          label="Guest Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          fullWidth
-        />
-        <TextField
-          label="Phone Number"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          fullWidth
-        />
-        <Button variant="contained" onClick={addGuest}>
-          Add Guest
-        </Button>
-      </Box>
+      <Card
+        sx={{
+          mb: 4,
+          border: "1px solid rgba(102, 126, 234, 0.2)",
+          borderRadius: 2,
+        }}
+      >
+        <CardContent sx={{ pb: 3 }}>
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{ color: "#667eea", fontWeight: "bold" }}
+          >
+            Add New Guest
+          </Typography>
+          <Box display="flex" gap={2} mt={2}>
+            <TextField
+              label="Guest Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              fullWidth
+            />
+            <TextField
+              label="Phone Number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              fullWidth
+            />
+            <Button
+              variant="contained"
+              onClick={addGuest}
+              sx={{
+                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+              }}
+            >
+              Add Guest
+            </Button>
+          </Box>
+        </CardContent>
+      </Card>
 
       <Button variant="outlined" onClick={fetchGuests} sx={{ mb: 3 }}>
         Retrieve Guests
       </Button>
 
-      <Typography variant="h5" gutterBottom>
+      <Typography
+        variant="h5"
+        gutterBottom
+        sx={{ color: "#667eea", fontWeight: "bold" }}
+      >
         All Guests
       </Typography>
 
@@ -125,10 +171,19 @@ const GuestManagement = () => {
               sx={{
                 backgroundColor: guest.isActive ? "inherit" : "#f0f0f0",
                 opacity: guest.isActive ? 1 : 0.6,
+                border: "1px solid rgba(102, 126, 234, 0.2)",
+                borderRadius: 2,
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  boxShadow: "0 8px 24px rgba(102, 126, 234, 0.15)",
+                  transform: "translateY(-4px)",
+                },
               }}
             >
               <CardContent>
-                <Typography variant="h6">{guest.name}</Typography>
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  {guest.name}
+                </Typography>
                 <Typography color="textSecondary">{guest.phone}</Typography>
                 {!guest.isActive && (
                   <Typography color="error" variant="body2">
